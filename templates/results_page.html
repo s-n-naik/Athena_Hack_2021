@@ -8,8 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="static/results_webfunctions.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/results_styling.css">
+    <script src="static/scripts/results_webfunctions.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="static/stylesheets/results_styling.css">-->
+    <link href="../static/stylesheets/results_styling.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -22,8 +24,18 @@
         image.src = URL.createObjectURL(event.target.files[0]);
     };
     </script>
+    <script type="text/javascript">
+    function showItScroll() {
+    document.getElementById("hid").style.display = "block";
+    jQuery('html, body').animate({
+    scrollTop: jQuery("#hidden-content-anchor").offset().top
+    }, 1000);
+    };
+    </script>
+
 </head>
-<body>
+<body class="gradient-bg">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Logo goes here</a>
@@ -47,35 +59,113 @@
       </ul>
     </div>
   </div>
-  </nav>
-
-<div class="p-3 mb-2 bg-success bg-gradient text-white">Upload Image Here</div>
-
-<div class="container">
+</nav>
 <!--    <p><input type="file"  accept="image/*" name="also_image" id="file"  onchange="loadFile(event)" style="display: none;"></p>-->
 <!--    <p><label for="file" style="cursor: pointer;">Upload Image</label></p>-->
-    <p><img id="output" width="200" /></p>
+<!--    <p><img id="output" width="200" /></p>-->
 
 
-  <!-- Content here -->
-    <p>Click on the "Choose File" button to upload an image:</p>
+<!--<div class="p-3 mb-2 bg-success bg-gradient text-white">Upload Image Here</div>-->
 
-    <div class="input-group mb-3">
-        <form method="post" action="/upload" enctype="multipart/form-data"
-          <div class="custom-file">
-            <input name="image" accept="image/*" type="file" class="custom-file-input"
-                   id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">
-            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-          </div>
+<br><br><br>
 
-          <div class="input-group-append">
-            <button type="submit" class="input-group-text" id="">Upload</button>
-          </div>
-        </form>
+<div class="container">
+
+    <div class="outer">
+        <div class="middle">
+            <div class="padding-64 wrapper white-bg shadow-darker inner">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                  <!-- Content here -->
+                    <p>Click on the "Choose File" button to upload an image:</p>
+                    <br><br>
+                    <div class="input-group mb-3">
+                        <form method="post" action="/upload" enctype="multipart/form-data"
+                          <div class="custom-file">
+                            <input name="image" accept="image/*" type="file" class="custom-file-input"
+                                   id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">
+                            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+
+                          </div>
+
+                            <div class="mx-auto" style="width: 200px;">
+                                <p><img id="output" width="200" /></p>
+                            </div>
+
+                          <div class="input-group-append" id="upload">
+                            <button type="submit" class="input-group-text" id="upload_button" name="button">Upload</button>
+                          </div>
+                        <br><br>
+<!--                        <div>-->
+<!--                            {{success}}-->
+<!--                        </div>-->
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
+<!--<div class="container" style="display: none" id="hid">-->
+
+<!--    <div class="outer">-->
+<!--        <div class="middle">-->
+<!--            <div class="padding-64 wrapper white-bg shadow-darker inner">-->
+<!--                <div class="shadow-lg p-3 mb-5 bg-white rounded">-->
+<!--                    <div class="accordion" id="accordionExample">-->
+<!--                      <div class="accordion-item">-->
+<!--                        <h2 class="accordion-header" id="headingOne">-->
+<!--                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                            Can my item be recycled?-->
+<!--                          </button>-->
+<!--                        </h2>-->
+<!--                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">-->
+<!--                          <div class="accordion-body">-->
+<!--                          </div>-->
+<!--                            <strong>Image Recognition Results:</strong>-->
+<!--                            <ul>-->
+<!--                                <li><p>{{item_string}}</p></li>-->
+<!--                            </ul>-->
+<!--                            <strong>Recyclability:</strong>-->
+<!--                            <ul>-->
+<!--                                <li><p>{{can_recycle}}</p></li>-->
+<!--                            </ul>-->
+<!--                    {#        safe flag renders the html markup in the grid search string#}-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="accordion-item">-->
+<!--                        <h2 class="accordion-header" id="headingTwo">-->
+<!--                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                            Accordion Item #2-->
+<!--                          </button>-->
+<!--                        </h2>-->
+<!--                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">-->
+<!--                          <div class="accordion-body">-->
+<!--                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="accordion-item">-->
+<!--                        <h2 class="accordion-header" id="headingThree">-->
+<!--                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                            Accordion Item #3-->
+<!--                          </button>-->
+<!--                        </h2>-->
+<!--                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">-->
+<!--                          <div class="accordion-body">-->
+<!--                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 </body>
 </html>
