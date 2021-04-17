@@ -46,13 +46,13 @@
 
   <br><br>
   <div class="container">
-          <div class="padding-64 wrapper white-bg shadow-darker inner">
-              <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="padding-64 wrapper bg-dark shadow-darker inner">
+              <div class="shadow-lg p-3 mb-5 rounded">
                 <div class="container" style="width:50%">
-                  <h1>Results: Powered by AI</h1>
+                  <h1 class="text-center">Results: Powered by AI</h1>
                   <br><br>
-                  <div class="w3-display-container w3-hover-opacity" style="width:50%">
-                    <p><img src="../Picture2.png" alt="picture" style="width:100%"></p>
+                  <div class="w3-display-container w3-hover-opacity text-center">
+                    <img src="{{ url_for('static', filename=img_path) }}" alt="picture" style="width:50%">
                     <div class="w3-display-middle w3-display-hover">
                       <button type="button" class="btn btn-dark" href="#hidden-content-anchor" onclick="showItScroll(); return false;" >View Results</button>
                     </div>

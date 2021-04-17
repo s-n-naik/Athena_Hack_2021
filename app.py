@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static"
 
 
 # decorating index function with the app.route with url as /login
@@ -15,7 +16,7 @@ def start_page():
 def upload_img():
     if request.method == "POST":
         f = request.files["image"]
-        f.save(f.filename)
+        f.save(app.config['UPLOAD_FOLDER'] + "/"+f.filename)
         if f.filename in os.listdir(os.getcwd()):
             success = "file uploaded successfully"
         else:
@@ -23,7 +24,7 @@ def upload_img():
 
         working_dir = Path.cwd()
 
-        img_path = Path.joinpath(working_dir, f.filename)
+        img_path = str(f.filename)
         print("path", img_path)
         label = "Plastic"
         confidence = 0.8
