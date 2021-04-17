@@ -12,6 +12,19 @@ app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static"
 def start_page():
     return render_template('results_page.html')
 
+@app.route('/home')
+def get_home():
+    return render_template('homepage.html')
+
+@app.route('/checker')
+def get_results():
+    return render_template('results_page.html')
+
+@app.route('/recycling_habits')
+def get_habits():
+    return render_template('recycling_habits.html')
+
+
 @app.route('/upload', methods=['POST'])
 def upload_img():
     if request.method == "POST":
