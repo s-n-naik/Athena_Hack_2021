@@ -10,7 +10,7 @@ app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static"
 # decorating index function with the app.route with url as /login
 @app.route('/')
 def start_page():
-    return render_template('results_page.html')
+    return render_template('homepage.html')
 
 @app.route('/home')
 def get_home():
@@ -24,6 +24,9 @@ def get_results():
 def get_habits():
     return render_template('recycling_habits.html')
 
+@app.route('/rewards')
+def get_rewards():
+    return render_template('rewards.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_img():

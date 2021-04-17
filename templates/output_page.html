@@ -20,30 +20,41 @@
     </script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Logo goes here</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="results_page.html">Recyclable checker</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="recycling_habits.html">My recycling progress</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Rewards</a>
-          </li>
-        </ul>
-      </div>
+
+</head>
+<body class="gradient-bg">
+ <nav class="navbar navbar-expand-lg navbar-dark shadow-darker">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="static/Picture2.png" title="logo" height="42" width="42"/></a>
+    <button style="background-color: #2b4764" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <form action="/home">
+          <button style="background-color: #2b4764" type="submit" class="nav-link active" aria-current="page" >Home</button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form action="/checker">
+          <button style="background-color: #2b4764" type="submit" class="nav-link">Recyclable checker</button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form action="/recycling_habits" >
+          <button style="background-color: #2b4764" type="submit" class="nav-link">My recycling progress</button>
+                </form>
+        </li>
+        <li class="nav-item">
+            <form action="/rewards">
+          <button style="background-color: #2b4764" class="nav-link" href="#">Rewards</button>
+            </form>
+        </li>
+      </ul>
     </div>
-    </nav>
+  </div>
+</nav>
 
   <br><br>
   <div class="container">
