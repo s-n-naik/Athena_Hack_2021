@@ -14,6 +14,10 @@ body {
     --red-color: #ff1414;
 }
 
+.custom-dark-bg{
+    background-color: #c29898;
+}
+
 body.dark-theme {
     --text-color: #dcdcdc;
     --bkg-color: #121212;
@@ -175,6 +179,9 @@ textarea {
 .blue{background-color:#4094d9;}
 .light-blue-bg{background-color: #c6ffff}
 .black-bg{background-color:#000000!important;}
+.dark-bg{
+    background-color: #212121;
+}
 .gradient-bg{
     background-image: linear-gradient(var(--gradient-bottom),var(--gradient-top));
 }
@@ -466,7 +473,7 @@ input#grid_search{
     left: 50%;
     top: 50%;
     height: 200px;
-    margin-top: -100px /* half of you height */
+    margin-top: -100px; /* half of you height */
     width: 400px;
     margin-left: -200px /* half of you width */
 }
