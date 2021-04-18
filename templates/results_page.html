@@ -80,72 +80,72 @@
 
 <!--<div class="p-3 mb-2 bg-success bg-gradient text-white">Upload Image Here</div>-->
 
-<br><br><br>
-<div class="container wrapper shadow-darker inner p-3 mb-5 rounded">
-    <div class="p-4">
-    <h1>Know Your Recyclables <a><img src="static/img/logo.png" title="logo" height="82" width="82"/></a></h1>
-    </div>
-</div>
-<div class="container wrapper bg-dark shadow-darker inner p-3 mb-5 rounded gradient-custom">
-    <div class="p-4">
-     <h1 class="title text-center" style="color: whitesmoke">
-         Powered by AI:</h1><br>
-         <p>We are using a deep image recognition model to identify your items and provide you with personalized info to make recycling as quick and hassle-free as possible! We'll also share tips on ways to become more sustainable and circular-economy friendly.</p>
-         <p>Simply take a picture of an item and get all the info you need instantly! We will let you know: </p>
-         <ul>
-             <li>
-                 If your item is recyclable
-             </li>
-             <li>
-                 Where the nearest bin or collection point is (recycle on-the-go!)
-             </li>
-             <li>
-                 If your item isn't recyclable, what alternative products are there on the market that will allow you to contribute to a more circular economy
-             </li>
-
-         </ul>
-    <br><br>
-    </div>
-
-</div>
-
-<div class="container wrapper bg-dark shadow-darker inner p-3 mb-5 rounded justify-content-center">
-
-        <br><br>
-    <div class="container-fluid centre-text justify-content-center">
-        <p style="text-align: center">Click on the "Choose File" button to upload an image:</p>
-        <div class="input-group mb-3 justify-content-center">
-            <form method="post" action="/upload" enctype="multipart/form-data">
-              <div class="custom-file" style="height: 20px">
-                <input name="image" accept="image/*" type="file" class="custom-file-input"
-                       id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">
-                <label class="custom-file-label" style="height: 20px"for="inputGroupFile02">Choose file</label>
-<!--              </div>-->
-                <br><br>
-                <div class="mx-auto justify-content-center" style="width: 500px;"><button type="submit" class="input-group-text bg-primary" id="upload_button" name="button">Upload</button>
-                    <p><img id="output" width="200" /></p>
-                </div>
-                </div>
-            <br><br>
-            </form>
+<div class="p-5">
+    <div class="container wrapper shadow-darker inner p-3 mb-5 rounded">
+        <div class="p-4">
+        <h1>Know Your Recyclables <a><img src="static/img/logo.png" title="logo" height="82" width="82"/></a></h1>
         </div>
     </div>
-<!--        <div class="input-group mb-3">-->
-<!--            <form method="post" action="/upload" enctype="multipart/form-data">-->
-<!--              <div class="custom-file">-->
-<!--                <input name="image" accept="image/*" type="file" class="custom-file-input"-->
-<!--                       id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">-->
-<!--                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>-->
-<!--              </div>-->
-<!--                <div class="mx-auto" style="width: 200px;">-->
-<!--                    <p><img id="output" width="200" /></p>-->
-<!--                </div>-->
-<!--                <button type="submit" class="input-group-text" id="upload_button" name="button">Upload</button>-->
-<!--            <br><br>-->
-<!--            </form>-->
-<!--        </div>-->
-</div>
+    <div class="container wrapper bg-dark shadow-darker inner p-3 mb-5 rounded gradient-custom">
+        <div class="p-4">
+         <h1 class="title text-center" style="color: whitesmoke">
+             Powered by AI:</h1><br>
+             <p>We are using a deep image recognition model to identify your items and provide you with personalized info to make recycling as quick and hassle-free as possible! We'll also share tips on ways to become more sustainable and circular-economy friendly.</p>
+             <p>Simply take a picture of an item and get all the info you need instantly! We will let you know: </p>
+             <ul>
+                 <li>
+                     If your item is recyclable
+                 </li>
+                 <li>
+                     Where the nearest bin or collection point is (recycle on-the-go!)
+                 </li>
+                 <li>
+                     If your item isn't recyclable, what alternative products are there on the market that will allow you to contribute to a more circular economy
+                 </li>
 
+             </ul>
+        <br><br>
+        </div>
+
+    </div>
+
+    <div class="container wrapper bg-dark shadow-darker inner p-3 rounded justify-content-center">
+
+            <br><br>
+        <div class="container-fluid centre-text justify-content-center">
+            <p style="text-align: center">Click on the "Choose File" button to upload an image:</p>
+            <div class="input-group mb-3 justify-content-center">
+                <form method="post" action="/upload" enctype="multipart/form-data">
+                  <div class="custom-file" style="height: 20px">
+                    <input name="image" accept="image/*" type="file" class="custom-file-input"
+                           id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">
+                    <label class="custom-file-label" style="height: 20px"for="inputGroupFile02">Choose file</label>
+    <!--              </div>-->
+                    <br><br>
+                    <div class="mx-auto justify-content-center" style="width: 500px;"><button type="submit" class="input-group-text bg-primary" id="upload_button" name="button">Upload</button>
+                        <p><img id="output" width="200" /></p>
+                    </div>
+                    </div>
+                <br><br>
+                </form>
+            </div>
+        </div>
+    <!--        <div class="input-group mb-3">-->
+    <!--            <form method="post" action="/upload" enctype="multipart/form-data">-->
+    <!--              <div class="custom-file">-->
+    <!--                <input name="image" accept="image/*" type="file" class="custom-file-input"-->
+    <!--                       id="inputGroupFile02" onchange="loadFile(event)" style="display: none;">-->
+    <!--                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>-->
+    <!--              </div>-->
+    <!--                <div class="mx-auto" style="width: 200px;">-->
+    <!--                    <p><img id="output" width="200" /></p>-->
+    <!--                </div>-->
+    <!--                <button type="submit" class="input-group-text" id="upload_button" name="button">Upload</button>-->
+    <!--            <br><br>-->
+    <!--            </form>-->
+    <!--        </div>-->
+    </div>
+</div>
 </body>
 <footer>
   <!-- Copyright -->
