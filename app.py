@@ -5,7 +5,7 @@ from pathlib import Path
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static"
+app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static/img"
 
 
 # decorating index function with the app.route with url as /login
