@@ -1,7 +1,7 @@
 # Athena_Hack_2021
 EasyCycle - a hassle-free recycling app for the Athena 2021 Hackathon
 
-##How to use:
+## How to use:
 1) Install packages in terminal: pip install requirements.txt
 2) To launch the website:
     In your terminal, run python3 app.py
