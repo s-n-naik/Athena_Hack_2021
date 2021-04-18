@@ -9,6 +9,65 @@
     <script type="text/javascript" src="../static/stylesheets/homepage_css.css"></script>
     <link href="../static/stylesheets/homepage_css.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/bootstrap.css') }}">
+    <script>
+        function log_item(){
+            let logger = document.querySelector("#item_logger")
+            if (logger.style.display === "none") {
+               logger.style.display = "block"
+            }
+            else{
+                logger.style.display = "none"
+            }
+        }
+
+        async function add_table_row(){
+            let table = document.querySelector("#recycle_table");
+            let row = table.insertRow(-1);
+
+            let item = document.querySelector("#item_name");
+            let quantity_value = document.querySelector("#item_quantity");
+
+            {#let lastRow = table.rows[table.rows.length-1];#}
+            {#console.log(lastRow.cells)#}
+            {#let lastRow_val = parseInt(lastRow.cells[lastRow.cells.length-1].innerHTML)#}
+
+            let item_val = item.value;
+            let points_earned;
+            switch (item_val) {
+                case "bottle":
+                    points_earned = 1;
+                    break;
+                case "batteries":
+                    points_earned = 10;
+                    break;
+                case "straw":
+                    points_earned = 0.5;
+                    break;
+                case "bulb":
+                    points_earned = 10;
+                    break;
+                case "can":
+                    points_earned = 1;
+                    break;
+                case "nappy":
+                    points_earned = 0;
+                    break;
+            }
+            let number = document.querySelectorAll("td")
+            number = number[number.length-4].innerHTML
+            console.log(number)
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(0);
+            let cell3 = row.insertCell(0);
+            let cell4 = row.insertCell(0);
+            cell4.innerHTML = (parseInt(number)+1).toString()
+            cell3.innerHTML = item.options[item.selectedIndex].text;
+            cell2.innerHTML = quantity_value.value.toString();
+            cell1.innerHTML = (points_earned*quantity_value.value).toString();
+            quantity_value.value = "";
+            item.value = "bottle";
+        }
+    </script>
 </head>
 <body id="grad1">
 <nav class="navbar navbar-expand-lg navbar-dark shadow-darker">
@@ -57,7 +116,7 @@
             <div class="progress bg-light">
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50 coins</div>
             </div>
-            <table style="width:100%" class="table table-hover table-dark">
+            <table style="width:100%" class="table table-hover table-dark" id="recycle_table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -68,26 +127,42 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
+                  <td scope="row">1</td>
                   <td>Plastic Bottle</td>
                   <td>5</td>
                   <td>5</td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
+                  <td scope="row">2</td>
                   <td>AA Batteries</td>
                   <td>1</td>
                   <td>10</td>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
+                  <td scope="row">3</td>
                   <td>Paper Drinking Straw</td>
                   <td>10</td>
                   <td>5</td>
                 </tr>
               </tbody>
             </table>
-            <button type="button" class="btn btn-primary">Log an item</button>
+            <div class="p-2">
+            <button type="button" class="btn btn-primary" onclick="log_item()">Log an item</button>
+            </div>
+            <div class="p-2" style="display: none" id="item_logger">
+                <div class="p-2">
+                    <select id="item_name">
+                        <option value="bottle">Water bottle</option>
+                        <option value="batteries">AA battery</option>
+                        <option value="straw">Paper drinking straw</option>
+                        <option value="bulb">Light bulb</option>
+                        <option value="can">Metal can</option>
+                        <option value="nappy">Nappy</option>
+                    </select>
+                    <input type="text" placeholder="Enter item quantity" id="item_quantity">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="add_table_row()">Submit</button>
+            </div>
         </div>
 
       </div>
