@@ -57,85 +57,97 @@
 </nav>
 
   <br><br>
+<div class="container wrapper shadow-darker inner p-3 mb-5 rounded">
+    <h1 >Results: Powered by AI <a><img src="static/img/logo.png" title="logo" height="82" width="82"/></a></h1>
+</div>
+
+<div class="container wrapper bg-dark shadow-darker inner p-3 mb-5 rounded justify-content-center" style="text-align: center">
+   <div>
+      <h3>Image Recognition Results:</h3>
+      <br><p>Model output: {{item_string}}</p>
+      <button type="button" class="btn btn-primary">Result incorrect?</button>
+    <br><br>
+   <p>We have identified your item as a coffee cup! </p>
+   <br>
+   <p>Log it now to earn 25 EasyCycle points! </p>
+   <form action="/recycling_habits">
+   <button type="submit" class="btn btn-success">Log this item</button>
+   </form>
+   </div>
+</div>
   <div class="container">
           <div class="padding-64 wrapper bg-dark shadow-darker inner">
               <div class="shadow-lg p-3 mb-5 rounded">
                 <div class="container" style="width:50%">
-                  <h1 class="text-center">Results: Powered by AI</h1>
-                  <br><br>
+                  <h4 class="text-center">Find out how to recycle your item by clicking on your image below:</h4>
+                    <br>
                   <div class="w3-display-container w3-hover-opacity text-center">
                     <img src="{{ url_for('static', filename=img_path) }}" alt="picture" style="width:50%">
                     <div class="w3-display-middle w3-display-hover">
                       <button type="button" class="btn btn-dark" href="#hidden-content-anchor" onclick="showItScroll(); return false;" >Recycling Results</button>
                     </div>
                   <br>
-                  <div>
-                      <strong>Image Recognition Results:</strong>
-                      <br><p>{{item_string}}</p>
-                  </div>
                   </div>
                 </div>
               </div>
           </div>
       </div>
 
-  <div class="container" style="display: none" id="hid">
-    <div class="outer">
-        <div class="middle">
+  <div class="container wrapper bg-dark shadow-darker inner p-3 mb-5 rounded justify-content-center" style="display: none" id="hid">
+      <div class="container" style="text-align: center" >
+        <h3>Recycling Results:</h3>
+      </div>
             <div class="padding-64 wrapper shadow-darker inner">
                 <div class="shadow-lg p-3 mb-5 bg-dark rounded">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion bg-dark" id="accordionExample">
                       <div class="accordion-item bg-dark">
                         <h2 class="accordion-header" id="headingOne">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <button style="color: white; background-color: darkslategrey" class="accordion-button btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Can my item be recycled?
                           </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
+                          <div class="accordion-body bg-dark">
                           </div>
-                            <strong>Image Recognition Results:</strong>
                             <ul>
-                                <li><p>{{item_string}}</p></li>
+                                <li><p>Paper cups don't belong to recycling bins, but many cafes accept them back and recycle them!</p></li>
+                                <li><p>If your coffee cup has a plastic lid, you can recycle the lid</p></li>
                             </ul>
-                            <strong>Recyclability:</strong>
-                            <ul>
-                                <li><p>{{can_recycle}}</p></li>
-                            </ul>
-                    {#        safe flag renders the html markup in the grid search string#}
                         </div>
                       </div>
                       <div class="accordion-item bg-dark">
                         <h2 class="accordion-header" id="headingTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Where can I recycle it?
+                          <button style="color: white; background-color: darkslategrey" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Where can I dispose of my item?
                           </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
+                          <div class="accordion-body bg-dark">
                             <ul>
-                                <li><p>"Closest: "{{item_string}}</p></li>
-                                <li><p>"Closest: "{{item_string}}</p></li>
+                                <li><p>Your nearest recyclable container is 220m away.<a href="https://www.google.co.uk/maps/place/RBKC+Mixed+Recycling+Center/@51.4992219,-0.1789312,14z/data=!4m8!1m2!2m1!1srecycling+centre!3m4!1s0x0:0xac32a82a332a42c2!8m2!3d51.4947341!4d-0.1720583"> Click here for directions</a></p></li>
+                                <li><p>Your nearest collection place for paper cups is Local Café and it is 180m away.<a href="https://www.google.co.uk/maps/place/RBKC+Mixed+Recycling+Center/@51.4992219,-0.1789312,14z/data=!4m8!1m2!2m1!1srecycling+centre!3m4!1s0x0:0xac32a82a332a42c2!8m2!3d51.4947341!4d-0.1720583"> Click here for directions</a></p></li>
                             </ul>
                         </div>
                       </div>
                       </div>
                     <div class="accordion-item bg-dark">
-                    <h2 class="accordion-header" id="headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h2 class="accordion-header bg-dark" id="headingThree">
+                      <button style="color: white; background-color: darkslategrey" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         How can I better contribute to the circular economy?
                       </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>Alternative products...</strong>
+                      <div class="accordion-body bg-dark">
+                        <p>Do you often have your coffee on the go? Get yourself a stylish and eco-friendly reusable cup AND support a small business!</p>
+                         <br>
+                          <strong> For example, Circular&Co. make their amazing  reusable cups out of recycled paper cups!</strong>
+                          <br>
+                          <p> They are fully produced in the UK, will last you at least 10 years and even after that, you can recycle your cup further!<a href="https://circularandco.com/"> Get yours here.</a></p>
                     </div>
                   </div>
                 </div>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 </div>
 
