@@ -44,10 +44,10 @@ def upload_img():
 
         img_path = str(f.filename)
         print("path", img_path)
-        label = "Plastic"
-        confidence = 0.8
+        label = "Cardboard"
+        confidence = 0.81
 
-        item_string = f"We have identified your item as **{label}** with confidence {confidence*100:.2f}%"
+        item_string = f"We have identified your item as {label} with confidence {confidence*100:.2f}%"
         can_recycle = f"{label} can be recycled if it is CLEAN"
 
         # use this to get the file
