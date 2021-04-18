@@ -14,6 +14,7 @@ def start_page():
 
 @app.route('/home')
 def get_home():
+
     return render_template('homepage.html')
 
 @app.route('/checker')
