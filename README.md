@@ -32,7 +32,7 @@ Website Navigation:
     
 
 Model training
-1) open the .ipynb file
+1) open the Hackathon_Final.ipynb in Colab / Jupyter notebooks
 2) run all the cells in order to load packages, data, and train an ML model using the TrashNet dataset
 Papers we were inspired by: https://www.sciencedirect.com/science/article/pii/S0921344920304493
    
