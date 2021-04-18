@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 app = Flask(__name__)
+
 app.config['UPLOAD_FOLDER'] = os.getcwd()+"/static"
 
 
