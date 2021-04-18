@@ -9,29 +9,8 @@ EasyCycle - a hassle-free recycling app for the Athena 2021 Hackathon
         click on the link displayed in the terminal
         or type localhost:5000 in your browser to access the website 
    
-Website Navigation:
 
-1) Homepage: displays the key pillars of our product
-    - know your recyclables
-    - join our community
-    - make the switch (to sustainable goods)
-    
-2) Recyclable checker:
-   - powered by AI, this computer vision tool recognises your trash
-   - browse for an image and click upload
-   - you will be redirected to the results page where you can find out what to do with your trash
-    
-3) Community:
-   - log your recyclables
-   - join a team and complete challenges
-   - earn EasyCycle reward points
-    
-4) Rewards:
-    - follow the links to the sites of our sustainable partners
-    - unlock discounts by recycling more!
-    
-
-##Model training
+## Model Training
 1) open the Hackathon_Final.ipynb in Colab / Jupyter notebooks
 2) run all the cells in order to load packages, data, and train an ML model using the TrashNet dataset
 Papers we were inspired by: https://www.sciencedirect.com/science/article/pii/S0921344920304493
@@ -56,6 +35,28 @@ EasyCycle is a website (with dreams of becoming a mobile app), that gives you an
 - you log that you've recycled correctly! Well done! As a reward, you get points to spend on discounts at sustainable brands.
 
 You can even participate in team challenges with your social group or neighbourhood to earn your goal amount of recycle points for even bigger rewards! And the app introduces you to sustainable brands so if you have an item that can't be recycled you get introduced to a sustainable alternative.
+
+###  Website Navigation:
+
+1) Homepage: displays the key pillars of our product
+    - know your recyclables
+    - join our community
+    - make the switch (to sustainable goods)
+    
+2) Recyclable checker:
+   - powered by AI, this computer vision tool recognises your trash
+   - browse for an image and click upload
+   - you will be redirected to the results page where you can find out what to do with your trash
+    
+3) Community:
+   - log your recyclables
+   - join a team and complete challenges
+   - earn EasyCycle reward points
+    
+4) Rewards:
+    - follow the links to the sites of our sustainable partners
+    - unlock discounts by recycling more!
+    
 
 ## How we built it
 The AI model was built in pytorch.
